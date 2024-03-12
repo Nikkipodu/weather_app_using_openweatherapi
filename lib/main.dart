@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_using_openweatherapi/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,15 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
     return const MaterialApp(
       title: 'Weather',
-      debugShowCheckedModeBanner: false ,
-      );
-
-
-
+      debugShowCheckedModeBanner: false,
+      home: HomePage(), // Question: How did you test your application? did you even run it once?
+    );
   }
 }
-
-
