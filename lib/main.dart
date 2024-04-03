@@ -11,10 +11,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+
+    return  MaterialApp(
       title: 'Weather',
+      theme:ThemeData(
+        scaffoldBackgroundColor: const Color(0xFF303030),
+        brightness: Brightness.light,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      home: HomePage(), // Question: How did you test your application? did you even run it once?
-    );
+      home:const HomePage(),
+      );
+
+
+
   }
 }
+
+
