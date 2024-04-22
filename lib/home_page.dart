@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _wf.currentWeatherByCityName("Enter the city name ").then((w) {
+    _wf.currentWeatherByCityName("Hyderabad").then((w) {
       setState(() {
         _weather = w;
       });
@@ -30,29 +30,21 @@ class _HomePageState extends State<HomePage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
+
         children: [
           Container(
             height: size.height * 0.99,
             width: size.width,
             margin: const EdgeInsets.only(right: 12 , left: 12),
-            padding: const EdgeInsets.all(70.0),
-            child: SafeArea(child: _buildUI()),
-            decoration:  BoxDecoration(
-              color: Colors.brown,
-              borderRadius: BorderRadius.circular(30),
-              gradient: const LinearGradient(
-                  colors:[
-                    Color(0xFF0D47A1),
-                    Color(0xFF01597B),
-                  ],
-                begin:  Alignment.bottomCenter,
-                end: Alignment.topCenter,
-
-
+            padding: const EdgeInsets.all(50.0),
+            decoration:  const BoxDecoration(
+              image: DecorationImage(image:AssetImage("assets/"))
             ),
+            child: SafeArea(child: _buildUI()),
           )
-          )],
-      )
+          ],
+      ),
+
 
 
     );
@@ -72,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _locationHeader(),
-            SizedBox(height: size.height * 0.95),
+            SizedBox(height: size.height * 0.07),
             _dateTimeInfo(),
             SizedBox(height: size.height * 0.05),
             _weatherIcon(),
